@@ -2,7 +2,7 @@
 
 a collection of notes / handouts i’m building while learning math and cs properly.
 
-not optimized for exams or speed — more for actually understanding things and being able to come back to them later.
+not optimized for exams or speed: more for actually understanding things and being able to come back to them later.
 
 ---
 
