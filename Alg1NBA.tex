@@ -1,0 +1,359 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em}
+
+
+% BOX STYLES
+
+
+\newtcolorbox{bluebox}{
+colback=blue!7,
+colframe=blue!70!black,
+boxrule=1pt,
+arc=4pt,
+breakable,
+enhanced
+}
+
+\newtcolorbox{purplebox}{
+colback=violet!7,
+colframe=violet!70!black,
+boxrule=1pt,
+arc=4pt,
+breakable,
+enhanced
+}
+
+\newtcolorbox{redbox}{
+colback=red!7,
+colframe=red!70!black,
+boxrule=1pt,
+arc=4pt,
+breakable,
+enhanced
+}
+
+
+% DOCUMENT
+
+
+\begin{document}
+
+\title{\textbf{Algebra 1 Handout \\ \small The Big Picture}}
+\author{VPSS}
+\date{March 2026}
+
+\maketitle
+\hrule
+\vspace{0.8em}
+
+
+% LEARNING TARGETS
+
+
+\section*{Learning Targets}
+
+\begin{itemize}[leftmargin=1.4em]
+\item I can identify and use key Algebra 1 vocabulary.
+\item I can solve equations and justify each step.
+\item I can model real-world situations with algebraic expressions or equations.
+\end{itemize}
+
+
+% PHILOSOPHY SECTION
+
+
+\begin{bluebox}
+
+\section{Philosophy, Meaning, Purpose, Quirks}
+
+\textbf{What is algebra really?}
+
+Algebra is the language of patterns and relationships. Instead of working only with specific numbers, we introduce \emph{symbols} (usually letters) that represent numbers we do not yet know or numbers that may vary.
+
+This lets us express general truths rather than isolated examples.
+
+For example
+
+\[
+a+b=b+a
+\]
+
+This is not about two specific numbers. It states a rule that works for \emph{all} numbers. Algebra compresses infinitely many numerical statements into a single symbolic statement.
+
+\subsection*{Why letters?}
+
+Letters serve several purposes in mathematics.
+
+\textbf{Unknown quantities}
+
+They can represent a number we want to find.
+
+\[
+x+5=12
+\]
+
+\textbf{Variables}
+
+They can represent quantities that change.
+
+\[
+d = rt
+\]
+
+Distance depends on rate and time.
+
+\textbf{General mathematical rules}
+
+Letters allow us to state universal identities.
+
+\[
+(a+b)^2 = a^2 + 2ab + b^2
+\]
+
+Without symbols, mathematics would be limited to individual calculations instead of general reasoning.
+
+\subsection*{The philosophy of contest math}
+
+Contest mathematics treats algebra as a \textbf{tool for thinking}, not just calculating.
+
+In many problems, the key step is choosing the right representation. Difficult problems often become simple once the situation is translated into the right algebraic expression.
+
+Strong algebraic thinking involves
+
+\begin{itemize}
+\item translating word problems into equations
+\item introducing useful variables
+\item recognizing patterns and symmetry
+\item simplifying expressions strategically
+\end{itemize}
+
+\subsection*{Meaning over manipulation}
+
+Algebra is not just a list of mechanical rules. Every step in solving an equation represents a logical operation.
+
+Example:
+
+\[
+2x+6=14
+\]
+
+Subtract $6$ from both sides:
+
+\[
+2x=8
+\]
+
+Divide both sides by $2$:
+
+\[
+x=4
+\]
+
+Each operation preserves the equality.
+
+\subsection*{Quirks and conventions}
+
+Algebra uses a few conventions that may seem unusual at first.
+
+\begin{itemize}
+
+\item \textbf{Multiplication by adjacency}
+
+\[
+3x = 3\cdot x
+\]
+
+\item \textbf{Variable names do not matter}
+
+\[
+x+2=5 \quad \text{means the same as} \quad y+2=5
+\]
+
+\item \textbf{Order properties}
+
+\[
+a+b=b+a
+\]
+
+but
+
+\[
+a-b \ne b-a
+\]
+
+\item \textbf{Expressions vs equations}
+
+\[
+x^2+3x
+\]
+
+is an expression.
+
+\[
+x^2+3x=10
+\]
+
+is an equation.
+
+\end{itemize}
+
+\subsection*{Why this matters for contest math}
+
+Strong problem solvers use algebra as a creative language.
+
+Instead of asking
+
+\begin{center}
+“What formula should I apply?”
+\end{center}
+
+they ask
+
+\begin{itemize}
+
+\item What quantities should I represent with variables?
+\item What relationships exist between them?
+\item Can this expression be rewritten more simply?
+
+\end{itemize}
+
+The best algebraic move is often the one that reveals hidden structure.
+
+\[
+\text{Algebra = expressing ideas precisely and manipulating them intelligently}
+\]
+
+\end{bluebox}
+
+
+% EXAMPLE
+
+
+\section*{Example for LaTeX and General Problems}
+
+\textbf{Solve}
+
+\[
+3(2x-1)=15
+\]
+
+\textbf{Solution}
+
+\[
+\begin{aligned}
+3(2x-1) &= 15 \\
+6x-3 &= 15 \\
+6x &= 18 \\
+x &= 3
+\end{aligned}
+\]
+
+\textbf{Check}
+
+\[
+3(2\cdot3-1)=3(5)=15 \quad \checkmark
+\]
+
+\begin{purplebox}
+\section{General Tips for Learning}
+
+\begin{itemize}
+\item Always understand \textbf{why} a step works, not just how to do it.
+\item Try to rewrite problems in your own words before solving.
+\item Introduce variables carefully and define what they represent.
+\item Check answers by substituting them back into the original equation.
+\item Look for patterns and structure rather than expanding everything immediately.
+\end{itemize}
+
+\section{Lesson 1: The Basic Tools for Simple Problems}
+
+\textbf{Objective:} Single-variable algebra can be understood intuitively.
+
+In many algebra problems, we are solving for a \textbf{single unknown quantity}.  
+The goal is to isolate that variable using operations that preserve equality.
+
+Key tools include:
+
+\begin{itemize}
+
+\item \textbf{Balancing equations}
+
+\[
+x+5=12
+\]
+
+Subtract $5$ from both sides:
+
+\[
+x=7
+\]
+
+\item \textbf{Distributing}
+
+\[
+3(x+2)=3x+6
+\]
+
+\item \textbf{Combining like terms}
+
+\[
+2x+3x=5x
+\]
+
+\item \textbf{Inverse operations}
+\[
+Addition \iff Subtraction \\ 
+Multiplication \iff Division
+\]
+\end{itemize}
+
+Most introductory algebra problems can be solved using only these few tools.
+
+\end{purplebox}
+
+% PROBLEMS
+
+\begin{redbox}
+
+\section{Problems}
+
+Complete the following independently. Show clear work for full credit.
+
+\begin{enumerate}[leftmargin=1.5em,label=\textbf{\arabic*.}]
+
+\item $9x-4=41$
+
+\item $7(x+2)=3x+30$
+
+\item $2(3x-5)-4=18$
+
+\item $\dfrac{5x-1}{2}=12$
+
+\item A phone plan charges \$15 base fee plus \$8 per gigabyte.  
+Write and solve an equation for the number of gigabytes used if the total bill is \$71.
+
+\item The sum of two consecutive integers is $47$.  
+Write and solve an equation to find the integers.
+
+\end{enumerate}
+
+\end{redbox}
+% EXIT TICKET
+\section*{Exit Ticket}
+
+In \textbf{2--3 sentences}: What step do you find most important when solving equations, and why?
+
+\vspace{0.8in}
+\hrule \\*
+\textbf{Part of a 3-Piece Handout Series on Algebra I} \\
+\textbf{If you plan to use this, cite me!} \\
+\textbf{Reach out at cowboyhehe1@gmail.com}
+\end{document}
