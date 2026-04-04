@@ -1100,21 +1100,39 @@ Is this rational or irrational?
 \section*{\textsc{Meet the Complexes}}
 \sepline
 
-The complex numbers are the most complete system we study.
+The real numbers $\R$ resolve division and eliminate gaps, but still fail at a fundamental level:
 
-Unlike previous extensions, $\C$ is not merely about fixing an operation —  
-it ensures that \textbf{all polynomial equations have solutions}.
+\[
+x^2 + 1 = 0
+\]
 
-Thus, $\C$ is the natural endpoint of algebraic extension and is central to higher mathematics.
+There is no real number whose square is negative.
+
+Thus $\R$ is not sufficient to solve all polynomial equations.
+
+We now ask:
+
+\textit{Can we extend $\R$ in the smallest possible way so that this equation has a solution?}
 
 \begin{theorybox}
 
-We define a number $i$ such that:
+\textbf{Step 1: Forcing a Solution}
+
+Introduce a new element $i$ such that:
 \[
 i^2 = -1
 \]
 
-A complex number is of the form:
+This is the minimal extension required to solve:
+\[
+x^2 + 1 = 0
+\]
+
+\textbf{Step 2: What Should Numbers Look Like Now?}
+
+If $i$ exists, then expressions like $a + bi$ must be included.
+
+To remain closed under addition and multiplication, we consider all such expressions:
 \[
 z = x + iy, \quad x,y \in \R
 \]
@@ -1124,29 +1142,77 @@ Thus:
 \C = \{x + iy \mid x,y \in \R\}
 \]
 
-\textbf{Algebra}
+\textbf{Key Insight}
 
-For $z_1 = a+bi,\; z_2 = c+di$:
+A complex number is an ordered pair $(x,y)$ written as $x + iy$.
 
+\textbf{Step 3: Defining Addition}
+
+To extend real addition consistently:
 \[
-z_1 + z_2 = (a+c) + (b+d)i
+(a,b) + (c,d) = (a+c, b+d)
 \]
 
+Thus:
 \[
-z_1 z_2 = (ac - bd) + (ad+bc)i
+(a+bi) + (c+di) = (a+c) + (b+d)i
 \]
 
-\textbf{Properties}
+\textbf{Step 4: Defining Multiplication}
 
+We require:
 \begin{itemize}
-\item Commutativity
-\item Associativity
-\item Distributivity
+\item distributivity
+\item $i^2 = -1$
 \end{itemize}
 
+Compute:
+\[
+(a+bi)(c+di)
+= ac + adi + bci + bd i^2
+\]
+
+Using $i^2 = -1$:
+\[
+= (ac - bd) + (ad + bc)i
+\]
+
+This is the only rule that preserves the required properties.
+
+\textbf{Step 5: Algebraic Structure}
+
+For all $z_1, z_2, z_3 \in \C$:
+
+\begin{itemize}
+\item Commutativity:
+\[
+z_1 + z_2 = z_2 + z_1, \quad z_1 z_2 = z_2 z_1
+\]
+
+\item Associativity:
+\[
+(z_1 + z_2) + z_3 = z_1 + (z_2 + z_3)
+\]
+
+\item Distributivity:
+\[
+z_1(z_2 + z_3) = z_1 z_2 + z_1 z_3
+\]
+\end{itemize}
+
+\textbf{Step 6: Embedding $\R$}
+
+Every real number appears inside $\C$:
+\[
+x = x + 0i
+\]
+
+Thus:
 \[
 \R \subset \C
 \]
+
+\textbf{Step 7: Identity Elements}
 
 \[
 z + 0 = z, \quad z \cdot 1 = z
@@ -1156,46 +1222,108 @@ z + 0 = z, \quad z \cdot 1 = z
 
 \subsection*{Real and Imaginary Parts}
 
+Let:
 \[
-\text{Re}(z) = x, \quad \text{Im}(z) = y
+z = x + iy
 \]
+
+Define:
+\[
+\text{Re}(z) := x, \quad \text{Im}(z) := y
+\]
+
+These extract the two coordinates of the number.
 
 \subsection*{Conjugates}
 
+Define:
 \[
 \bar{z} = x - iy
 \]
 
+Then:
 \[
-z\bar{z} = x^2 + y^2
+z\bar{z} = (x+iy)(x-iy) = x^2 + y^2 \in \R
 \]
+
+This converts a complex number into a real quantity.
+
+\subsection*{Numbers as Points}
+
+The expression $x + iy$ behaves like a point $(x,y)$.
+
+Thus $\C$ can be viewed as a plane.
+
+\subsection*{Trigonometry and Direction}
+
+On the unit circle:
+\[
+x^2 + y^2 = 1
+\]
+
+define:
+\[
+(\cos\theta, \sin\theta)
+\]
+
+Thus:
+\[
+\cos^2\theta + \sin^2\theta = 1
+\]
+
+Each angle $\theta$ represents a direction.
 
 \begin{theorybox}
 
 \textbf{Deeper into $\C$}
 
-\begin{itemize}
-\item $\C$ is algebraically closed
-\item No order relation exists compatible with multiplication
-\item Sequences behave component-wise as in $\R$
-\end{itemize}
+\begin{enumerate}
 
-\textbf{Complex Plane}
+\item \textbf{Complex Plane}
 
 Each $z = x+iy$ corresponds to a point $(x,y)$.
 
-\textbf{Modulus}
+\item \textbf{Modulus}
 
 \[
 |z| = \sqrt{x^2 + y^2}
 \]
 
-\textbf{Argument}
+This is the distance from the origin.
 
-Angle $\theta$ such that:
+\item \textbf{Argument}
+
+If $z \neq 0$, there exists $\theta$ such that:
 \[
 z = |z|(\cos\theta + i\sin\theta)
 \]
+
+Each number has magnitude and direction.
+
+\item \textbf{Multiplication}
+
+Let:
+\[
+z_1 = r_1(\cos\theta_1 + i\sin\theta_1), \quad
+z_2 = r_2(\cos\theta_2 + i\sin\theta_2)
+\]
+
+Then:
+\[
+z_1 z_2 = r_1 r_2 (\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2))
+\]
+
+Multiplication scales lengths and adds angles.
+
+\item \textbf{No Order Relation}
+
+There is no consistent way to define $<$ or $>$ on $\C$.
+
+\item \textbf{Algebraic Closure}
+
+Every polynomial equation has a solution in $\C$.
+
+\end{enumerate}
 
 \end{theorybox}
 
