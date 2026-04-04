@@ -36,7 +36,11 @@ not always clean, but that’s the idea.
 - try problems without looking at solutions
 - come back after some time and see what stuck
 
+<<<<<<< HEAD
 if something feels unclear, it probably is, fix it or rewrite it
+=======
+if something feels unclear, it probably is — fix it or rewrite it
+>>>>>>> e730539c40ae4c3ba8f75d509d97c30957260edf
 
 ---
 
