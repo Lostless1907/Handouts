@@ -1,0 +1,284 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+
+\definecolor{main}{HTML}{1E3A8A}
+\definecolor{lightblue}{HTML}{EFF6FF}
+
+\titleformat{\section}{\large\bfseries\color{main}}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+\setlist[itemize]{noitemsep, topsep=2pt}
+
+\tcbset{
+    mybox/.style={
+        colback=lightblue,
+        colframe=main,
+        arc=6pt,
+        boxrule=0.8pt,
+        left=8pt,
+        right=8pt,
+        top=8pt,
+        bottom=8pt
+    }
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{AP Statistics: Unit 1}} \\[4pt]
+{\small \textit{Statistics is the disciplined extraction of signal from noise.}} \\
+{\small \textbf{~ By Lostless1907}}
+\end{center}
+
+\vspace{10pt}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Population, Sample, and Units}
+
+\textbf{Population:} complete collection of interest  
+
+\textbf{Sample:} subset used for study  
+
+\textbf{Statistical Unit:} a single element  
+
+\textbf{Subject:} a human unit  
+
+\subsection*{From Whole to Part}
+
+A dataset is represented as:
+\[
+x_1, x_2, \dots, x_n
+\]
+
+Each $x_i$ corresponds to one unit.  
+In practice, we observe $S \subseteq P$ and attempt to infer properties of $P$.
+
+The quality of conclusions depends critically on how $S$ is chosen.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Parameters and Statistics}
+
+\textbf{Parameter:} numerical summary of a population  
+
+\textbf{Statistic:} numerical summary of a sample  
+
+\[
+\mu = \text{population mean}, \quad 
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+\]
+
+\subsection*{Estimation as the Core Problem}
+
+Parameters are fixed but unknown.  
+Statistics are random variables depending on the sample.
+
+All of statistics is built on approximating parameters using statistics, and understanding the error in that approximation.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Variables}
+
+\textbf{Variable:} a measurable attribute  
+
+\textbf{Explanatory Variable ($x$):} predictor  
+
+\textbf{Response Variable ($y$):} outcome  
+
+\subsection*{Structure Behind Data}
+
+A fundamental model:
+\[
+y = f(x) + \varepsilon
+\]
+
+where $\varepsilon$ captures randomness, noise, and unobserved influences.
+
+Even when a relationship exists, it is rarely perfectly deterministic.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Confounding}
+
+A \textbf{confounding variable} affects both explanatory and response variables.
+
+\subsection*{When Relationships Mislead}
+
+If $Z$ influences both $X$ and $Y$, then:
+\[
+P(Y|X) \neq P(Y|X,Z)
+\]
+
+The observed association between $X$ and $Y$ may be partially or entirely due to $Z$, rather than a direct relationship.
+
+This is the primary obstacle to causal inference.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Correlation and Causation}
+
+\textbf{Correlation:} statistical association  
+
+\textbf{Causation:} direct influence  
+
+\subsection*{Sources of Association}
+
+An observed relationship may arise from:
+\begin{itemize}
+\item $X \rightarrow Y$ (causal effect)
+\item $Z \rightarrow X, Y$ (confounding)
+\item random variation (coincidence)
+\end{itemize}
+
+Establishing causation requires controlled experimental structure, not just observed association.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Types of Studies}
+
+\textbf{Observational Study:} no intervention  
+
+\textbf{Experiment:} active assignment of treatments  
+
+\subsection*{Seeing vs Controlling}
+
+Observational studies measure existing conditions and can reveal patterns.
+
+Experiments manipulate variables and, when properly designed, allow isolation of causal effects.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Experiments}
+
+\textbf{Treatment:} imposed condition  
+
+\textbf{Experimental Unit:} object receiving treatment  
+
+\textbf{Response:} measured outcome  
+
+\subsection*{Structure of an Experiment}
+
+An experiment assigns treatments to units and measures responses, aiming to compare outcomes across different conditions.
+
+The validity of conclusions depends on design, not just data.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Control}
+
+\textbf{Control Group:} baseline for comparison  
+
+\textbf{Control Variable:} factor held constant  
+
+\subsection*{Isolating Effects}
+
+Control removes alternative explanations.
+
+Without a control group, differences in outcomes cannot be attributed confidently to the treatment.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Randomization}
+
+Assignment of treatments using chance.
+
+\subsection*{Eliminating Hidden Bias}
+
+Randomization distributes both known and unknown confounders across groups.
+
+This ensures that differences in outcomes are due to treatment rather than pre-existing differences.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Experimental Designs}
+
+\textbf{Completely Randomized Design:} assign treatments purely at random  
+
+\textbf{Randomized Block Design:} group similar units, randomize within groups  
+
+\textbf{Matched Pairs Design:} compare highly similar units or repeated measures  
+
+\subsection*{Reducing Unnecessary Variation}
+
+Blocking and matching reduce variability from known sources, increasing the precision of comparisons.
+
+Less noise leads to clearer detection of treatment effects.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Blinding}
+
+\textbf{Single-Blind:} subjects unaware  
+
+\textbf{Double-Blind:} subjects and evaluators unaware  
+
+\textbf{Placebo:} inert treatment  
+
+\subsection*{Preventing Behavioral Bias}
+
+Awareness of treatment can influence both participant behavior and measurement.
+
+Blinding removes expectation effects and preserves objectivity.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Replication}
+
+Repeating an experiment across multiple units.
+
+\subsection*{Stability Through Repetition}
+
+Replication reduces the effect of random variation.
+
+Reliable conclusions require consistent results across many observations.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Law of Large Numbers}
+
+As sample size increases, sample statistics approach population parameters.
+
+\subsection*{Convergence Through Size}
+
+\[
+\bar{x} \to \mu \quad \text{as } n \to \infty
+\]
+
+Larger samples reduce variability and improve accuracy of estimates.
+
+This is the mathematical foundation of statistical reliability.
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[mybox]
+\section*{Census}
+
+A \textbf{census} collects data from the entire population.
+
+\subsection*{Limits of Completeness}
+
+Although exact, censuses are often impractical due to cost, time, and logistical constraints.
+
+Carefully designed samples usually provide sufficient accuracy with far greater efficiency.
+\end{tcolorbox}
+
+\end{document}
