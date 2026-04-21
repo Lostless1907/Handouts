@@ -1,0 +1,268 @@
+\documentclass[11pt]{article}
+
+% Page layout
+\usepackage[a4paper, margin=1in]{geometry}
+
+% Math packages
+\usepackage{amsmath, amssymb, amsfonts}
+
+% Typography
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\setstretch{1.1}
+
+% Lists
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+% Tables
+\usepackage{array}
+\usepackage{booktabs}
+
+% Colors and boxes
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+% TikZ for diagrams
+\usepackage{tikz}
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+
+% Section styling
+\usepackage{titlesec}
+
+\titleformat{\section}
+{\Large\bfseries}{}
+{0em}{}
+
+\titleformat{\subsection}
+{\large\bfseries\color{black!80}}{}{0em}{}
+
+% Paragraph formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Separator
+\newcommand{\sepline}{
+    \vspace{0.5em}
+    \hrule
+    \vspace{1em}
+}
+
+% Colors
+\definecolor{myblue}{HTML}{D6EAF8}
+\definecolor{myred}{HTML}{FADBD8}
+\definecolor{mypurple}{HTML}{E8DAEF}
+
+% Boxes
+\newtcolorbox{theorybox}{
+    colback=mypurple,
+    colframe=purple!70!black,
+    breakable
+}
+
+\newtcolorbox{remarkbox}{
+    colback=myblue,
+    colframe=blue!60!black,
+    breakable
+}
+
+\newtcolorbox{problembox}{
+    colback=myred,
+    colframe=red!70!black,
+    breakable
+}
+
+% Document
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+
+{\Huge \bfseries Cartesian Products and Ordered Pairs \par}
+
+\vspace{1cm}
+
+{\large Lostless1907 \par}
+
+\vfill
+
+\sepline
+
+{\large \textit{A supposedly delicious introduction to pairing and dimension in sets}}
+
+\end{titlepage}
+
+\section*{\textsc{Preface}}
+\sepline
+
+Sets allow us to collect objects.
+
+However, many mathematical situations require us to relate objects while preserving order.
+
+This leads to the idea of ordered pairs and Cartesian products.
+
+\section*{\textsc{Cartesian Products and Ordered Pairs}}
+\sepline
+
+\begin{theorybox}
+
+\textbf{Why Order Matters}
+
+Consider:
+\[
+(a,b)
+\]
+
+We require:
+\[
+(a,b) \neq (b,a)
+\]
+
+Thus, unlike sets, order is essential.
+
+\textbf{Defining Ordered Pairs}
+
+We define $(a,b)$ such that:
+\[
+(a,b) = (c,d) \iff a = c \text{ and } b = d
+\]
+
+This property uniquely determines ordered pairs.
+
+\textbf{Construction}
+
+We define:
+\[
+(a,b) := \{\{a\}, \{a,b\}\}
+\]
+
+This ensures the defining property holds.
+
+\textbf{Cartesian Product}
+
+Given sets $A$ and $B$:
+\[
+A \times B = \{(a,b) \mid a \in A,\; b \in B\}
+\]
+
+\textbf{Size}
+
+If $|A| = m$ and $|B| = n$:
+\[
+|A \times B| = mn
+\]
+
+\textbf{Order Matters Again}
+
+\[
+A \times B \neq B \times A
+\]
+
+\end{theorybox}
+
+\subsection*{Examples}
+
+\begin{theorybox}
+
+Let:
+\[
+A = \{1,2\}, \quad B = \{x,y\}
+\]
+
+Then:
+\[
+A \times B =
+\{(1,x),(1,y),(2,x),(2,y)\}
+\]
+
+\[
+B \times A =
+\{(x,1),(x,2),(y,1),(y,2)\}
+\]
+
+\end{theorybox}
+
+\subsection*{Geometric Interpretation}
+
+If $A, B \subseteq \R$, then each $(a,b)$ is a point.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+
+\draw[->] (-1,0)--(4,0) node[right]{$x$};
+\draw[->] (0,-1)--(0,4) node[above]{$y$};
+
+\fill (1,2) circle (2pt) node[right]{$(1,2)$};
+\fill (2,1) circle (2pt) node[right]{$(2,1)$};
+
+\end{tikzpicture}
+\end{center}
+
+Thus:
+\[
+\R \times \R = \text{the plane}
+\]
+
+\begin{remarkbox}
+
+A Cartesian product does not introduce new elements.
+
+It introduces structure by pairing existing elements with order.
+
+\end{remarkbox}
+
+\begin{remarkbox}
+
+Cartesian products increase dimension:
+
+\begin{itemize}
+\item $\R$ is a line
+\item $\R \times \R$ is a plane
+\item $\R^3$ is space
+\end{itemize}
+
+\end{remarkbox}
+
+\begin{problembox}
+
+\textbf{Problems}
+
+\begin{enumerate}
+
+\item Show that $(1,2) \neq (2,1)$.
+
+\item If $(a,b) = (c,d)$, prove $a=c$ and $b=d$.
+
+\item Construct $\{1,2\} \times \{a,b,c\}$.
+
+\item Find $|\{1,2,3\} \times \{x,y\}|$.
+
+\item Show:
+\[
+A \times B = \emptyset \iff A = \emptyset \text{ or } B = \emptyset
+\]
+
+\item When is $A \times B = B \times A$?
+
+\item Show:
+\[
+(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D)
+\]
+
+\item Describe $A \times A$.
+
+\item If $A = \R$, describe $A \times A$.
+
+\item Challenge:
+
+How many subsets does $\{1,2\} \times \{x,y\}$ have?
+
+\end{enumerate}
+
+\end{problembox}
+
+\end{document}
